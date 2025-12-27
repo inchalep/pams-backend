@@ -27,4 +27,4 @@ jobs:
       - name: Remove existing docker container
         run: docker rm -f pams-backend
       - name: Run container
-        run: docker run -d -p 8000:8000 --name pams-backend -e MONGO_URI='${{ secrets.MONGO_URI }}' -e JWT_SECRET='${{ secrets.JWT_SECRET }}'
+        run: docker run -d -p 8000:8000 --name pams-backend -e MONGO_URI='${{ secrets.MONGO_URI }}' -e JWT_SECRET='${{ secrets.JWT_SECRET }}' dnyaneshwarinchale/pams-backend:latest
