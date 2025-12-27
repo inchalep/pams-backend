@@ -83,7 +83,6 @@ const usersAdoptRequest = async (req, res) => {
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 10;
     const all = req.query.all;
-    console.log(req.user, "all::", all);
     const skip = (page - 1) * limit;
 
     const query = {
@@ -93,7 +92,6 @@ const usersAdoptRequest = async (req, res) => {
       delete query.user;
       query.status='PENDING'
     }
-    console.log(query,'ddd')
     const data = await Adoption.aggregate([
       {
         $match: query,
