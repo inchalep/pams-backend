@@ -25,6 +25,13 @@ connectDb()
   });
 
 app.use("/api", router);
+
+app.use("/health", (req, res) => {
+  return res.status(200).json({
+    message: "ok",
+  });
+});
+
 app.use(errorLogger);
 app.use(errorHandler);
 app.listen(PORT, () => {
